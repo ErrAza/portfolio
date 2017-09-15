@@ -1,11 +1,11 @@
 mixin gallery(options)
-    - var DEFAULT_OPTIONS = { img: 'cat.jpg', count: 12};
+    - var DEFAULT_OPTIONS = { devposts: [{}] };
     - options = Object.assign({}, DEFAULT_OPTIONS, options || {});
     #gallery.container
         .row.text-center.text-lg-left
-            - for(var i = 0; i < options.count; i++) {
+            - for(var i = 0; i < options.devposts.length; i++) {
                 .col-lg-3.col-md-4.col-xs-6
-                    a.d-block.mb-4.h-100(href="#")
-                        img.img-fluid.img-thumbnail(src=options.img, alt="")
+                    a.d-block.h-100(href="Development/" + options.devposts[i].title)
+                        img.img-fluid.img-thumbnail(class='raise', src=options.devposts[i].thumbnail, alt="")
             - }
 
