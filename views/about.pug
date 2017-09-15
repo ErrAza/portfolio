@@ -1,25 +1,9 @@
 include partials/header.pug
 
 body
-    nav.navbar.navbar-toggleable-md.navbar-light.bg-faded
-        button.navbar-toggler.navbar-toggler-right(type="button", data-toggle="collapse", data-target="#navbarSupportedContent", aria-controls="navbarSupportedContent", aria-expanded="false", aria-label="Toggle navigation")
-            span.navbar-toggler-icon
-        .container
-            #navbarSupportedContent.collapse.navbar-collapse
-                ul.navbar-nav.mr-auto
-                    li.nav-item.active
-                        a.nav-link(href="/")
-                            i.fa.fa-home(aria-hidden="true")
-                            span.sr-only (current)
-                    li.nav-item
-                        a.nav-link(href="development") Development
-                    li.nav-item
-                        a.nav-link(href="music") Music
-                    li.nav-item
-                        a.nav-link(href="about") 
-                            strong About
-                    li.nav-item
-                        a.nav-link(href="contact") Contact
+    include partials/navbar.pug
+
+    +navbar({current: "About"})
                         
 include partials/gallery.pug
 
