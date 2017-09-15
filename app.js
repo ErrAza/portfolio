@@ -2,28 +2,30 @@ var express = require("express");
 var app = express();
 var path = require("path");
 
-app.use('/', express.static(__dirname + "/public/views/"));
 app.use('/', express.static(__dirname + "/public/styles/"));
 app.use('/', express.static(__dirname + "/public/images/"));
 
+app.set('view engine', 'pug');
+app.set('views', './views');
+
 app.get("/", function(req, res) {
-	res.sendFile(path.join(__dirname + 'index.html'));
+	res.render("home");
 });
 
 app.get("/development", function(req, res) {
-	res.sendFile(path.join(__dirname + '/public/views/development.html'));
+	res.render('dev');
 });
 
 app.get("/music", function(req, res) {
-	res.sendFile(path.join(__dirname+"/music.html"));
+	res.render('music');
 });
 
 app.get("/about", function(req, res) {
-	res.sendFile(path.join(__dirname+"/about.html"));
+	res.render('about');
 });
 
 app.get("/contact", function(req, res) {
-	res.sendFile(path.join(__dirname+"/contact.html"));
+	res.render('contact');
 });
 
 app.listen(3000, process.env.IP, function() {
