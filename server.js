@@ -42,6 +42,7 @@ var devPostSchema = new mongoose.Schema({
 
 var DevPost = mongoose.model("Devpost", devPostSchema);
 
+
 // Routing
 
 app.get("/", function(req, res) {
@@ -53,6 +54,7 @@ app.get("/development", function(req, res) {
 		if (err) {
 			console.log(err);
 		} else {
+			console.log(devposts);
 			res.render("dev", {devposts: devposts});
 		}
 	})
@@ -72,6 +74,6 @@ app.get("/contact", function(req, res) {
 
 // Listening
 
-app.listen(3000, process.env.IP, function() {
+app.listen(80, process.env.IP, function() {
 	console.log("Server running on 3000");
 });

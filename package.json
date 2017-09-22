@@ -2,7 +2,7 @@
   "name": "portfolio",
   "version": "1.0.0",
   "description": "Sean McCann Portfolio",
-  "main": "app.js",
+  "main": "server.js",
   "dependencies": {
     "express": "^4.15.4",
     "mongoose": "^4.11.11",
